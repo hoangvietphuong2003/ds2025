@@ -35,8 +35,8 @@ This project implements a simple gRPC service for a collaborative sketchboard.
 1. Generate the gRPC and Protocol Buffers code:
 
     ```sh
-    protoc -I=. --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` sketchboard.proto
-    protoc -I=. --cpp_out=. sketchboard.proto
+    protoc --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` sketchboard.proto
+    protoc --cpp_out=. sketchboard.proto
     ```
 
 2. Compile the server and client:
