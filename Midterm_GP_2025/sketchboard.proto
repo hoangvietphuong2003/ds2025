@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service Sketchboard {
+    rpc UpdateDrawing(DrawingUpdate) returns (Ack);
+    rpc GetBoardState(Empty) returns (BoardState);
+}
+
+message DrawingUpdate {
+    int32 x = 1;
+    int32 y = 2;
+    string color = 3;
+}
+
+message BoardState {
+    repeated DrawingUpdate updates = 1;
+}
+
+message Ack {
+    bool success = 1;
+}
+
+message Empty {}
